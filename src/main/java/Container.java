@@ -2,13 +2,12 @@ import java.util.Arrays;
 
 public class Container {
 
-    // TODO: добавить константу для изменения capacity
+    public static int MinCapacity = 10;
+    private int DeltaCapacity = 2;
 
     private int data[];
     private int size;
     private int capacity;
-
-    public static int MinCapacity = 10;
 
     /**
      * <h3>Создаёт контейнер с минимальной вместимостью</h3>
@@ -20,7 +19,7 @@ public class Container {
     }
 
     /**
-     *
+     * <h3>Создаёт контейнер с заданной вместимостью</h3>
      * @param capacity вместимость контейнера для инициализации
      */
     public Container(int capacity) {
@@ -30,11 +29,11 @@ public class Container {
     }
 
     /**
-     *
+     * <h3>Создаёт контейнер с заданными числами</h3>
      * @param data элементы для инициализации контейнера
      */
     public Container(int[] data) {
-        capacity = Math.max(data.length + 10, MinCapacity);
+        capacity = Math.max(data.length * DeltaCapacity, MinCapacity);
         size = data.length;
         this.data = new int[capacity];
         copy(data, this.data);
@@ -47,9 +46,25 @@ public class Container {
     public void add(int num) {
         // TODO: написать тесты
         if (size + 1 >= capacity) {
-            increaseContainer(capacity + 10);
+            increaseContainer(capacity * DeltaCapacity);
         }
         data[size++] = num;
+    }
+
+    /**
+     * <h3>Удаление элемента по заданному индексу</h3>
+     * @param index индекс по которому удаляется элемент из контейнера
+     */
+    public void remove(int index) {
+        if (index < 0 || index >= size) {
+            throw new ArrayIndexOutOfBoundsException();
+        }
+
+        for (int i = index; i < size - 1; i++) {
+            data[i] = data[i + 1];
+        }
+
+        data[--size] = 0;
     }
 
     /**
