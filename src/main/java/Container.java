@@ -85,6 +85,15 @@ public class Container {
 
     /**
      *
+     * @param index индекс по которому получается значение
+     * @return значение по заданному индексу
+     */
+    public int getItem(int index) {
+        return data[index];
+    }
+
+    /**
+     *
      * @return размер контейнера
      */
     public int getSize() {
