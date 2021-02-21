@@ -11,7 +11,7 @@ public class Container {
     public static int MinCapacity = 10;
 
     /**
-     * Создаёт контейнер с минимальной вместимостью
+     * <h3>Создаёт контейнер с минимальной вместимостью</h3>
      */
     public Container() {
         this.capacity = MinCapacity;
@@ -41,10 +41,11 @@ public class Container {
     }
 
     /**
-     * Добавление элемента в контейнер
+     * <h3>Добавление элемента в контейнер</h3>
      * @param num число для добавления в контейнер
      */
     public void add(int num) {
+        // TODO: написать тесты
         if (size + 1 >= capacity) {
             increaseContainer(capacity + 10);
         }
@@ -52,10 +53,11 @@ public class Container {
     }
 
     /**
-     * Изменение максимальной вместимости контейнера
+     * <h3>Изменение максимальной вместимости контейнера</h3>
      * @param newCapacity новая вместимость контейнера
      */
     private void increaseContainer (int newCapacity) {
+        // TODO: написать тесты
         capacity = newCapacity;
         int[] newData = new int[capacity];
         if (size > 0) {
@@ -66,11 +68,12 @@ public class Container {
 
 
     /**
-     * Копирование одного массива в другой
+     * <h3>Копирование одного массива в другой</h3>
      * @param source данные для копирования
      * @param data куда копируются данные
      */
-    private void copy (int [] source, int [] data) {
+    public void copy (int [] source, int [] data) {
+        // TODO: написать тесты
         if (source.length > data.length) {
             data = new int [source.length];
         }
