@@ -26,10 +26,12 @@ class ContainerTest {
     void add() {
         container.add(1);
         assertEquals(size + 1, container.getSize());
-        int[] newData = new int[size + 1];
-        container.copy(data, newData);
-        newData[size + 1] = 1;
-        assertArrayEquals(newData, container.getData());
+
+        for (int i = 0; i < size; i++) {
+            assertEquals(data[i], container.getData()[i]);
+        }
+
+        assertEquals(1, container.getData()[size]);
     }
 
     @Test
