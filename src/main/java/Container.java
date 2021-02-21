@@ -11,7 +11,7 @@ public class Container {
     public static int MinCapacity = 10;
 
     /**
-     * Создаёт контейнер с минимальной вместимостью
+     * <h3>Создаёт контейнер с минимальной вместимостью</h3>
      */
     public Container() {
         this.capacity = MinCapacity;
@@ -20,7 +20,7 @@ public class Container {
     }
 
     /**
-     *
+     * <h3>Создаёт контейнер с заданной вместимостью</h3>
      * @param capacity вместимость контейнера для инициализации
      */
     public Container(int capacity) {
@@ -30,7 +30,7 @@ public class Container {
     }
 
     /**
-     *
+     * <h3>Создаёт контейнер с заданными числами</h3>
      * @param data элементы для инициализации контейнера
      */
     public Container(int[] data) {
@@ -41,7 +41,7 @@ public class Container {
     }
 
     /**
-     * Добавление элемента в контейнер
+     * <h3>Добавление элемента в контейнер</h3>
      * @param num число для добавления в контейнер
      */
     public void add(int num) {
@@ -52,7 +52,7 @@ public class Container {
     }
 
     /**
-     *
+     * <h3>Удаление элемента по заданному индексу</h3>
      * @param index индекс по которому удаляется элемент из контейнера
      */
     public void remove(int index) {
@@ -68,7 +68,7 @@ public class Container {
     }
 
     /**
-     * Изменение максимальной вместимости контейнера
+     * <h3>Изменение максимальной вместимости контейнера</h3>
      * @param newCapacity новая вместимость контейнера
      */
     private void increaseContainer (int newCapacity) {
@@ -82,7 +82,7 @@ public class Container {
 
 
     /**
-     * Копирование одного массива в другой
+     * <h3>Копирование одного массива в другой</h3>
      * @param source данные для копирования
      * @param data куда копируются данные
      */
