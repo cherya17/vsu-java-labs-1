@@ -102,6 +102,14 @@ public class Container {
 
     /**
      *
+     * @return вместимость контейнера
+     */
+    public int getCapacity() {
+        return capacity;
+    }
+
+    /**
+     *
      * @return массив элементов
      */
     public int[] getData() {
