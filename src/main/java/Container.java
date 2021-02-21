@@ -52,6 +52,22 @@ public class Container {
     }
 
     /**
+     *
+     * @param index индекс по которому удаляется элемент из контейнера
+     */
+    public void remove(int index) {
+        if (index < 0 || index >= size) {
+            throw new ArrayIndexOutOfBoundsException();
+        }
+
+        for (int i = index; i < size - 1; i++) {
+            data[i] = data[i + 1];
+        }
+
+        data[--size] = 0;
+    }
+
+    /**
      * Изменение максимальной вместимости контейнера
      * @param newCapacity новая вместимость контейнера
      */
