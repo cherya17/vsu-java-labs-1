@@ -28,10 +28,10 @@ class ContainerTest {
         assertEquals(size + 1, container.getSize());
 
         for (int i = 0; i < size; i++) {
-            assertEquals(data[i], container.getData()[i]);
+            assertEquals(data[i], container.getItem(i));
         }
 
-        assertEquals(1, container.getData()[size]);
+        assertEquals(1, container.getItem(size));
     }
 
     @Test
