@@ -2,13 +2,12 @@ import java.util.Arrays;
 
 public class Container {
 
-    // TODO: добавить константу для изменения capacity
+    public static int MinCapacity = 10;
+    private int DeltaCapacity = 2;
 
     private int data[];
     private int size;
     private int capacity;
-
-    public static int MinCapacity = 10;
 
     /**
      * <h3>Создаёт контейнер с минимальной вместимостью</h3>
@@ -34,7 +33,7 @@ public class Container {
      * @param data элементы для инициализации контейнера
      */
     public Container(int[] data) {
-        capacity = Math.max(data.length + 10, MinCapacity);
+        capacity = Math.max(data.length * DeltaCapacity, MinCapacity);
         size = data.length;
         this.data = new int[capacity];
         copy(data, this.data);
@@ -46,7 +45,7 @@ public class Container {
      */
     public void add(int num) {
         if (size + 1 >= capacity) {
-            increaseContainer(capacity + 10);
+            increaseContainer(capacity * DeltaCapacity);
         }
         data[size++] = num;
     }
