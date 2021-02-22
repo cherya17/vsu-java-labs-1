@@ -1,3 +1,5 @@
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Arrays;
 
 public class Container {
@@ -32,7 +34,7 @@ public class Container {
      * <h3>Создаёт контейнер с заданными числами</h3>
      * @param data элементы для инициализации контейнера
      */
-    public Container(int[] data) {
+    public Container(@NotNull int[] data) {
         capacity = Math.max(data.length * DeltaCapacity, MinCapacity);
         size = data.length;
         this.data = new int[capacity];
@@ -44,7 +46,6 @@ public class Container {
      * @param num число для добавления в контейнер
      */
     public void add(int num) {
-        // TODO: написать тесты
         if (size + 1 >= capacity) {
             increaseContainer(capacity * DeltaCapacity);
         }
@@ -72,7 +73,6 @@ public class Container {
      * @param newCapacity новая вместимость контейнера
      */
     private void increaseContainer (int newCapacity) {
-        // TODO: написать тесты
         capacity = newCapacity;
         int[] newData = new int[capacity];
         if (size > 0) {
@@ -87,8 +87,7 @@ public class Container {
      * @param source данные для копирования
      * @param data куда копируются данные
      */
-    public void copy (int [] source, int [] data) {
-        // TODO: написать тесты
+    public void copy (@NotNull int [] source, @NotNull int [] data) {
         if (source.length > data.length) {
             data = new int [source.length];
         }
