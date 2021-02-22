@@ -121,7 +121,7 @@ public class Container {
 
     /**
      *
-     * @param value
+     * @param value значение элемента по которому производится поиск
      * @return индекс первого элемента со значением value, если такого элемента нет, возвращает -1
      */
     public int getIndex(int value) {
@@ -130,6 +130,21 @@ public class Container {
         }
 
         return -1;
+    }
+
+    /**
+     *
+     * @param value
+     * @return количество элементов со значением value
+     */
+    public int count(int value) {
+        int count = 0;
+
+        for (int i = 0; i < size; i++) {
+            if (data[i] == value) count++;
+        }
+
+        return count;
     }
 
     /**
