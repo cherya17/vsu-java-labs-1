@@ -52,6 +52,13 @@ class ContainerTest {
     }
 
     @Test
+    void getItem() {
+        assertEquals(1, container.getItem(0));
+        assertEquals(2, container.getItem(1));
+        assertEquals(3, container.getItem(2));
+    }
+
+    @Test
     void copy() {
         Container newContainer = new Container(container.getCapacity());
         container.copy(data, newContainer.getData());
