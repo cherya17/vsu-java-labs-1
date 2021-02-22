@@ -84,6 +84,14 @@ class ContainerTest {
     }
 
     @Test
+    void  getIndex() {
+        assertEquals(0, container.getIndex(1));
+        assertEquals(1, container.getIndex(2));
+        assertEquals(2, container.getIndex(3));
+        assertEquals(-1, container.getIndex(555));
+    }
+
+    @Test
     void getItem() {
         assertEquals(1, container.getItem(0));
         assertEquals(2, container.getItem(1));
