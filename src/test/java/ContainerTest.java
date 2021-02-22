@@ -99,6 +99,15 @@ class ContainerTest {
     }
 
     @Test
+    void count() {
+        assertEquals(1, container.count(2));
+        container.push(2);
+        assertEquals(2, container.count(2));
+
+        assertEquals(0, container.count(12));
+    }
+
+    @Test
     void copy() {
         Container newContainer = new Container(container.getCapacity());
         container.copy(data, newContainer.getData());
