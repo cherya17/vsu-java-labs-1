@@ -14,7 +14,10 @@ class ContainerTest {
     void setUp() {
         container = new Container(new int[] {1, 2, 3});
         size = container.getSize();
-        data = container.getData();
+        data = new int[container.getCapacity()];
+        for (int i = 0; i < size; i++) {
+            data[i] = container.getItem(i);
+        }
     }
 
     @AfterEach
@@ -32,6 +35,20 @@ class ContainerTest {
         }
 
         assertEquals(1, container.getItem(size));
+    }
+
+    @Test
+    void remove() {
+        int index = 1;
+        container.remove(index);
+
+        assertEquals(size - 1, container.getSize());
+        for (int i = 0; i < index; i++) {
+            assertEquals(data[i], container.getItem(i));
+        }
+        for (int i = index; i < size - 1; i++) {
+            assertEquals(data[i + 1], container.getData()[i]);
+        }
     }
 
     @Test
