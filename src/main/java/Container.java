@@ -121,6 +121,19 @@ public class Container {
 
     /**
      *
+     * @param value
+     * @return индекс первого элемента со значением value, если такого элемента нет, возвращает -1
+     */
+    public int getIndex(int value) {
+        for (int i = 0; i < size; i++) {
+            if (data[i] == value) return i;
+        }
+
+        return -1;
+    }
+
+    /**
+     *
      * @param index индекс по которому получается значение
      * @return значение по заданному индексу
      */
