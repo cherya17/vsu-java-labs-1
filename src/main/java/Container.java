@@ -45,11 +45,33 @@ public class Container {
      * <h3>Добавление элемента в контейнер</h3>
      * @param num число для добавления в контейнер
      */
-    public void add(int num) {
+    public void push(int num) {
         if (size + 1 >= capacity) {
             increaseContainer(capacity * DeltaCapacity);
         }
         data[size++] = num;
+    }
+
+    /**
+     * <h3>Добавление элемента в контейнер по заданному индексу</h3>
+     * @param num число для добавления в контейнер
+     * @param index индекс по которому происходит добавление
+     */
+    public void insert(int num, int index) {
+        if (index < 0 || index > size) {
+            throw new ArrayIndexOutOfBoundsException();
+        }
+
+        if (size + 1 >= capacity) {
+            increaseContainer(capacity * DeltaCapacity);
+        }
+
+        for (int i = size; i > index; i--) {
+            data[i] = data[i - 1];
+        }
+
+        size++;
+        data[index] = num;
     }
 
     /**

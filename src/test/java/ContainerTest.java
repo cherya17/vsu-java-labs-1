@@ -26,8 +26,8 @@ class ContainerTest {
     }
 
     @Test
-    void add() {
-        container.add(1);
+    void push() {
+        container.push(1);
         assertEquals(size + 1, container.getSize());
 
         for (int i = 0; i < size; i++) {
