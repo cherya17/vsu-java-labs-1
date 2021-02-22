@@ -26,7 +26,7 @@ class ContainerTest {
     }
 
     @Test
-    void pushTest() {
+    void push() {
         container.push(1);
         assertEquals(size + 1, container.getSize());
 
@@ -38,20 +38,20 @@ class ContainerTest {
     }
 
     @Test
-    void insertTest() {
+    void insert() {
 
         // start of container
-        insertTestStep(111, 0);
+        insertStep(111, 0);
 
         // middle of container
-        insertTestStep(222, 2);
+        insertStep(222, 2);
 
         // end of container
-        insertTestStep(333, size - 1);
-        insertTestStep(444, size);
+        insertStep(333, size - 1);
+        insertStep(444, size);
     }
 
-    void insertTestStep(int num, int index) {
+    void insertStep(int num, int index) {
         container.insert(num, index);
         assertEquals(size + 1, container.getSize());
 
@@ -70,7 +70,7 @@ class ContainerTest {
     }
 
     @Test
-    void removeTest() {
+    void remove() {
         int index = 1;
         container.remove(index);
 
@@ -84,14 +84,14 @@ class ContainerTest {
     }
 
     @Test
-    void getItemTest() {
+    void getItem() {
         assertEquals(1, container.getItem(0));
         assertEquals(2, container.getItem(1));
         assertEquals(3, container.getItem(2));
     }
 
     @Test
-    void copyTest() {
+    void copy() {
         Container newContainer = new Container(container.getCapacity());
         container.copy(data, newContainer.getData());
 
