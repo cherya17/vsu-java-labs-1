@@ -134,7 +134,7 @@ public class Container {
 
     /**
      *
-     * @param value
+     * @param value значение элемента по которому производится поиск
      * @return количество элементов со значением value
      */
     public int count(int value) {
