@@ -65,7 +65,7 @@ class ContainerTest {
             assertEquals(data[i - 1], container.getItem(i));
         }
 
-        container.copy(container.getData(), data);
+        container.arrayCopy(container.getData(), data);
         size = container.getSize();
     }
 
@@ -108,9 +108,9 @@ class ContainerTest {
     }
 
     @Test
-    void copy() {
-        Container newContainer = new Container(container.getCapacity());
-        container.copy(data, newContainer.getData());
+    void arrayCopy() {
+        Container newContainer = new Container(container.getCapacity() - 2);
+        container.arrayCopy(data, newContainer.getData());
 
         for (int i = 0; i < size; i++) {
             assertEquals(data[i], newContainer.getItem(i));

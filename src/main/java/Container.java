@@ -38,7 +38,7 @@ public class Container {
         capacity = Math.max(data.length * DeltaCapacity, MinCapacity);
         size = data.length;
         this.data = new int[capacity];
-        copy(data, this.data);
+        arrayCopy(data, this.data);
     }
 
     /**
@@ -98,24 +98,21 @@ public class Container {
         capacity = newCapacity;
         int[] newData = new int[capacity];
         if (size > 0) {
-            copy(data, newData);
+            arrayCopy(data, newData);
         }
         data = newData;
     }
 
 
-    /**
-     * <h3>Копирование одного массива в другой</h3>
-     * @param source данные для копирования
-     * @param data куда копируются данные
-     */
-    public void copy (@NotNull int [] source, @NotNull int [] data) {
-        if (source.length > data.length) {
-            data = new int [source.length];
-        }
 
-        for (int i = 0; i < source.length; i++) {
-            data[i] = source[i];
+    /**
+     * <h3>Копирование одного массива в другой не меняя размерность</h3>
+     * @param source данные для копирования
+     * @param destination куда копируются данные
+     */
+    public void arrayCopy (@NotNull int [] source, @NotNull int [] destination) {
+        for (int i = 0; i < source.length && i < destination.length; i++) {
+            destination[i] = source[i];
         }
     }
 
@@ -136,6 +133,7 @@ public class Container {
      *
      * @return представление data в виде строки
      */
+    @Override
     public String toString() {
         String res = "[";
         for (int i = 0; i < size; i++) {
@@ -193,6 +191,8 @@ public class Container {
      * @return массив элементов
      */
     public int[] getData() {
-        return data;
+        int[] temp = new int [size];
+        arrayCopy(data, temp);
+        return temp;
     }
 }
