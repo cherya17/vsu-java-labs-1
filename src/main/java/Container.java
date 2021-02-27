@@ -134,6 +134,22 @@ public class Container {
 
     /**
      *
+     * @return представление data в виде строки
+     */
+    public String toString() {
+        String res = "[";
+        for (int i = 0; i < size; i++) {
+            res += data[i];
+            if (i < size - 1) {
+                res += ", ";
+            }
+        }
+        res += "]";
+        return res;
+    }
+
+    /**
+     *
      * @param value значение элемента по которому производится поиск
      * @return количество элементов со значением value
      */

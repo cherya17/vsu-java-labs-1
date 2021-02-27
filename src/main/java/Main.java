@@ -4,6 +4,7 @@ public class Main {
         C.push(22);
 //        C.insert(35, 2);
         System.out.println(C.count(233));
+        System.out.println(C.toString());
 //        for (int i = 0; i < C.getSize(); i++) {
 //            System.out.println(C.getData()[i]);
 //        }
