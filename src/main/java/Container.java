@@ -138,10 +138,9 @@ public class Container {
         StringBuilder res = new StringBuilder("[");
         for (int i = 0; i < size; i++) {
             res.append(data[i]);
-            if (i < size - 1) {
-                res.append(", ");
-            }
+            res.append(", ");
         }
+        res.delete(res.length() - 2, res.length());
         res.append("]");
         return res.toString();
     }
