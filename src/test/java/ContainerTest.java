@@ -112,8 +112,13 @@ class ContainerTest {
         Container newContainer = new Container(container.getCapacity() - 2);
         container.arrayCopy(data, newContainer.getData());
 
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < newContainer.getSize(); i++) {
             assertEquals(data[i], newContainer.getItem(i));
         }
+    }
+
+    @Test
+    void toStringTest() {
+        container.toString();
     }
 }

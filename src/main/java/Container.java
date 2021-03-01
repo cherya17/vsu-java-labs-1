@@ -135,15 +135,15 @@ public class Container {
      */
     @Override
     public String toString() {
-        String res = "[";
+        StringBuilder res = new StringBuilder("[");
         for (int i = 0; i < size; i++) {
-            res += data[i];
+            res.append(data[i]);
             if (i < size - 1) {
-                res += ", ";
+                res.append(", ");
             }
         }
-        res += "]";
-        return res;
+        res.append("]");
+        return res.toString();
     }
 
     /**
